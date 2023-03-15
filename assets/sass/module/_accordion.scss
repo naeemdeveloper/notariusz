@@ -1,0 +1,54 @@
+/* accordion */
+button.accordion {
+    background-color: $primary-color;
+    color: $white-color;
+    cursor: pointer;
+    padding: 12px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 17px;
+    letter-spacing: 1px;
+    transition: 0.4s;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: $primary-color;
+}
+
+button.accordion:after {
+    content: '';
+    color: $white-color;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\f0d7";
+    font-family: 'FontAwesome';
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+div.panel {
+    padding: 0 20px;
+    background-color: #F8F8F8;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 3px;
+    .faq-answer {
+        padding: 50px 0 20px;
+        ul {
+            margin-bottom: 30px;
+            li {
+                list-style: circle;
+                margin-left: 20px;
+            }
+        }
+    }
+}

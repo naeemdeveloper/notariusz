@@ -1,0 +1,14 @@
+// theme font
+$theme-font: 'Montserrat', sans-serif;
+$heading-font: 'Playfair Display', serif;
+
+// theme color
+$primary-color: #004470;
+$white-color: #ffffff;
+$black-color: #000000;
+
+// google fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+// transition
+$transition: all .3s ease-in;

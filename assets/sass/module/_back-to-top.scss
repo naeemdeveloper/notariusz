@@ -1,0 +1,22 @@
+/* back to topr */
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    color: $white-color;
+    background-color: $primary-color;
+    font-size: 12px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: $transition;
+    z-index: 9999;
+    display: none;
+
+    &:hover {
+        color: $white-color;
+        background-color: $primary-color;
+    }
+}

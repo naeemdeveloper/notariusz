@@ -1,0 +1,820 @@
+/* theme */
+.header-area {
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+
+    @include tablet {
+        padding: 10px 0;
+    }
+    @include all-phone {
+        padding: 10px 0;
+    }
+
+    &.sticky-menu {
+        background-color: $white-color;
+
+        .main-logo {
+            display: none;
+            &.sticky-logo {
+                display: block;
+            }
+        }
+
+        .menu-toggle-bar {
+            @include tablet {
+                top: 25px;
+            }
+            @include all-phone {
+                top: 20px;
+            }
+            @include screen-360 {
+                top: 15px;
+            }
+        }
+
+        .main-menu {
+            li {
+                a {
+                    padding: 30px 15px;
+                }
+            }
+        }
+
+        .lang-icon {
+            a {
+                .white-icon {
+                    display: none;
+                }
+                .sticky-icon {
+                    display: block;
+                }
+            }
+            .hover-state {
+                padding: 40px 20px 10px;
+                top: -32px;
+            }
+        }
+    }
+
+    .main-logo {
+        width: 90%;
+        height: auto;
+        transition: .2s;
+        @include all-desktop {
+            max-width: 350px;
+        }
+        @include tablet {
+            width: 50%;
+        }
+        @include all-phone {
+            width: 60%;
+        }
+        @include portrait-phone {
+            width: 240px;
+        }
+        &.sticky-logo {
+            display: none;
+            transition: .2s;
+            margin-bottom: 5px;
+            @include tablet {
+                margin-bottom: 0;
+            }
+            @include all-phone {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .menu-toggle-bar {
+        background-color: $primary-color;
+        display: inline-block;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: $transition;
+        width: 40px;
+        height: 40px;
+        z-index: 9999;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        display: none;
+        @include tablet {
+            display: block;
+            top: 15px;
+        }
+        @include all-phone {
+            display: block;
+            top: 15px;
+        }
+        @include screen-360 {
+            top: 15px;
+        }
+        &.active {
+            .bar-1 {
+                transform: rotate(45deg);
+                top: 8px;
+            }
+            .bar-2 {
+                opacity: 0;
+                visibility: hidden;
+            }
+            .bar-3 {
+                transform: rotate(-45deg);
+                top: -8px;
+            }
+        }
+
+        .custom-bars {
+            padding-top: 5px;
+            padding-left: 8px;
+            .custom-bar {
+                width: 24px;
+                height: 2px;
+                background-color: $white-color;
+                margin: 6px 0;
+                transition: $transition;
+                position: relative;
+                .bar-1 {
+                    transform: rotate(0);
+                }
+                .bar-3 {
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+
+    .main-menu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: right;
+        position: relative;
+        transition: $transition;
+        @include tablet {
+            display: none;
+        }
+        @include all-phone {
+            display: none;
+        }
+        li {
+            display: inline-block;
+            a {
+                font-size: 14px;
+                font-weight: 700;
+                padding: 100px 15px 20px;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $primary-color;
+                display: block;
+                transition: .2s;
+                @include screen-1200 {
+                    font-size: 12px;
+                }
+                @include desktop {
+                    font-size: 11px;
+                }
+            }
+            &.active {
+                a {
+                    color: $white-color;
+                    background-color: $primary-color;
+                }
+            }
+            &.contact {
+                margin-right: 50px;
+            }
+        }
+    }
+
+    .mobile-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba($primary-color, .9);
+        padding: 100px 30px 20px;
+        transition: $transition;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+        @include all-desktop {
+            display: none;
+        }
+        &.active {
+            height: 100vh;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        li {
+            position: relative;
+            margin-bottom: 30px;
+            a {
+                color: $white-color;
+                font-size: 24px;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-decoration: none;
+                padding: 2px 10px;
+                display: inline-block;
+            }
+        }
+        li.active a {
+            color: $primary-color;
+            background-color: $white-color;
+        }
+
+        .lang-icon {
+            top: 20px;
+            right: 90px;
+        }
+    }
+
+    .lang-icon {
+        position: absolute;
+        bottom: 45px;
+        right: 0;
+        a {
+            padding: 0!important;
+            .white-icon {
+                position: absolute;
+                top: 1px;
+                right: 0;
+                transition: .2s;
+            }
+            .sticky-icon {
+                position: absolute;
+                top: -12px;
+                right: 0;
+                transition: .2s;
+                display: none;
+            }
+        }
+        &:hover {
+            .hover-state {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .hover-state {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            background-color: rgba($white-color, .9);
+            padding: 20px 20px 10px;
+            border-radius: 10px;
+            text-align: left;
+            transition: .2s;
+            opacity: 0;
+            visibility: hidden;
+            .green-icon {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            .languages {
+                margin-top: 55px;
+                div {
+                    margin-bottom: 15px;
+                    a {
+                        padding: 0;
+                        font-size: 12px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        color: $primary-color;
+                        padding-left: 40px!important;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        a {
+            padding: 90px 15px 20px;
+        }
+        img {
+            width: auto;
+            position: absolute;
+        }
+    }
+}
+
+.hero-area {
+    padding: 540px 0 120px;
+    background-image: url('../images/hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @include tablet {
+        padding: 160px 0 120px;
+    }
+    @include all-phone {
+        padding: 160px 0 120px;
+    }
+
+    .hero-content {
+        text-align: center;
+        h4 {
+            color: $white-color;
+            font-size: 28px;
+            font-weight: 400;
+            text-shadow: 0 0 40px #000, 0 0 60px #000, 0 0 10px #000, 0 0 98px #000;
+            filter: drop-shadow(2.5px 2.5px 5px #000);
+            @include tablet {
+                text-shadow: inherit;
+                filter: drop-shadow(2.5px 2.5px 5px transparent);
+            }
+            @include all-phone {
+                font-size: 24px;
+                text-shadow: inherit;
+                filter: drop-shadow(2.5px 2.5px 5px transparent);
+            }
+        }
+        h1 {
+            color: $white-color;
+            font-size: 54px;
+            font-weight: 400;
+            font-family: $heading-font;
+            margin-bottom: 10px;
+            text-shadow: 0 0 40px #000, 0 0 60px #000, 0 0 10px #000, 0 0 98px #000;
+            filter: drop-shadow(2.5px 2.5px 5px #000);
+            @include tablet {
+                text-shadow: inherit;
+                filter: drop-shadow(2.5px 2.5px 5px transparent);
+            }
+            @include all-phone {
+                text-shadow: inherit;
+                filter: drop-shadow(2.5px 2.5px 5px transparent);
+            }
+        }
+
+        .hero-btn {
+            margin-top: 50px;
+        }
+    }
+}
+
+.office-area {
+    padding: 160px 0 120px;    
+    
+    .about-left {
+        @include tablet {
+            margin-bottom: 50px;
+        }
+        @include all-phone {
+            margin-bottom: 50px;
+        }
+        h2 {
+            font-size: 48px;
+            font-weight: 400;
+            font-family: $heading-font;
+            color: $primary-color;
+            @include portrait-phone {
+                font-size: 42px;
+            }
+            .text-style {
+                position: relative;
+                z-index: 1;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 5px;
+                    width: 100%;
+                    height: 15px;
+                    background-color: #f0f0f0;
+                    z-index: -1;
+                }
+            }
+        }
+        p {
+            font-size: 19px;
+            margin: 40px 0 30px;
+        }
+    }
+
+    .about-right {
+        @include all-desktop {
+            margin-left: 30px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            &.semi-bold {
+                font-weight: 700;
+            }
+        }        
+    }
+}
+
+.team-area {
+    padding: 120px 0 90px;
+    background-color: #f7f7f7;
+    .section-title {
+        margin-bottom: 50px;
+        h2 {
+            font-size: 40px;
+            font-weight: 400;
+            font-family: $heading-font;
+        }
+    }
+
+    .single-item {
+        margin-bottom: 30px;
+        .item-image {
+            overflow: hidden;
+            &:hover {
+                img {
+                    transform: scale(1.1)
+                }
+            }
+            img {
+                transition: $transition;
+            }
+        }
+
+        .item-content {
+            text-align: center;
+            margin-top: 20px;
+            h4 {
+                font-size: 25px;
+                font-weight: 500;
+                font-family: $heading-font;
+                margin-bottom: 5px;
+            }
+            span {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.activities-area {
+    padding: 120px 0;
+    background-image: url('../images/blue-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: $white-color;
+    .section-title {
+        margin-bottom: 60px;
+        h2 {
+            color: $white-color;
+            font-size: 60px;
+            font-weight: 400;
+            font-family: $heading-font;
+        }
+    }
+
+    .left-content {
+        p {
+            font-size: 20px;
+            font-weight: 300;
+        }
+        ul {
+            margin-top: 40px;
+            li {
+                position: relative;
+                font-size: 17px;
+                font-weight: 300;
+                margin-bottom: 10px;
+                margin-left: 15px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 12px;
+                    left: -10px;
+                    width: 3px;
+                    height: 3px;
+                    border-radius: 50%;
+                    background-color: $white-color;
+                }
+            }
+        }
+    }
+
+    .right-content {
+        @include tablet {
+            margin-top: 60px;
+        }
+        @include all-phone {
+            margin-top: 60px;
+        }
+        p {
+            margin-bottom: 30px;
+            font-weight: 300;
+            a {
+                color: $white-color;
+            }
+        }
+
+        .third-btn {
+            margin-top: 10px;
+        }
+    }
+}
+
+.doccuments-area {
+    padding: 120px 0;
+    .section-title {
+        margin-bottom: 50px;
+        text-align: center;
+        h2 {
+            font-size: 50px;
+            font-weight: 400;
+            font-family: $heading-font;
+        }
+    }
+}
+
+.contact-area{
+    .contact-top {
+        background-color: #f8f8f8;
+        .google-map {
+            overflow: hidden;
+            iframe {
+                width: 100%;
+                height: 640px;
+                @include desktop {
+                    height: 670px;
+                }
+                @include tablet {
+                    height: 400px;
+                }
+                @include all-phone {
+                    height: 300px;
+                }
+            }
+        }
+
+        .right-content {
+            padding: 80px 0 70px;
+            margin-left: 30px;
+            @include screen-1200 {
+                margin-left: 10px;
+            }
+            @include desktop {
+                margin-left: 10px;
+            }
+            @include portrait-phone {
+                margin-left: 0;
+            }
+            .title-group {
+                display: flex;
+                align-items: center;
+                @include portrait-phone {
+                    align-items: start;
+                }
+                img {
+                    width: auto;
+                    margin-right: 20px;
+                    margin-top: 10px;
+                    @include portrait-phone {
+                        margin-top: 10px;
+                    }
+                }
+                h3 {
+                    font-size: 35px;
+                    font-weight: 400;
+                    font-family: $heading-font;
+                    color: $primary-color;
+                }
+            }
+
+            ul {
+                margin-top: 30px;
+                margin-left: 50px;
+                @include portrait-phone {
+                    margin-left: 0;
+                }
+                li {
+                    b {
+                        color: $primary-color;
+                    }
+                    font-size: 20px;
+                    font-weight: 500;
+                    &.small-text {
+                        color: #6e6e6e;
+                        font-size: 15px;
+                        font-weight: 500;
+                    }
+                    a {
+                        color: $black-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-bottom {
+        padding: 80px 0 50px;
+        p {
+            margin-bottom: 30px;
+        }
+        .left-part {
+            p {
+                color: #6e6e6e;
+                font-size: 15px;
+            }
+        }
+        .right-part {
+            @include tablet {
+                margin-top: 20px;
+            }
+            @include all-phone {
+                margin-top: 20px;
+            }
+            p {
+                color: $black-color;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.background-area {
+    .image-slider {
+        .slide-image {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 640px;
+            &.image-1 {
+                background-image: url('../images/background.jpg');
+            }
+            &.image-2 {
+                background-image: url('../images/background-2.jpg');
+            }
+            &.image-3 {
+                background-image: url('../images/background-3.jpg');
+            }
+
+            @include tablet {
+                height: 400px;
+            }
+            @include all-phone {
+                height: 300px;
+            }
+        }
+    }
+}
+
+.form-area {
+    padding: 140px 0 280px;
+    background-image: url('../images/form-bg.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    @include portrait-phone {
+        padding: 120px 0;
+    }
+    .form-title {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 370px;
+            height: 2px;
+            background-color: #e0e0e0;
+            @include portrait-phone {
+                width: 280px;
+                top: -40px;
+            }
+        }
+        h2 {
+            font-size: 50px;
+            font-weight: 400;
+            font-family: $heading-font;
+            color: $primary-color;
+        }
+    }
+
+    form {
+        input,
+        textarea {
+            color: $black-color;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: 500;
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: none;
+            border-bottom: 5px solid #e0e0e0;
+        }
+        textarea {
+            height: 120px;
+        }
+        ::placeholder {
+            color: $black-color;
+        }
+
+        .form-group {
+            display: block;
+        }
+          
+        .form-group input {
+            padding: 0;
+            height: initial;
+            width: initial;
+            margin-bottom: 0;
+            display: none;
+            cursor: pointer;
+        }
+        
+        .form-group label {
+            position: relative;
+            color: #717171;
+            font-size: 11px;
+            font-weight: 400;
+            cursor: pointer;
+            margin-left: 40px;
+        }
+        
+        .form-group label:before {
+            content:'';
+            background-color: transparent;
+            box-shadow: 0 0 5px 5px rgba(#717171, .2);
+            border: 1px solid transparent;
+            padding: 8px;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            left: -40px;
+        }
+        
+        .form-group input:checked + label:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 7px;
+            left: -34px;
+            width: 6px;
+            height: 10px;
+            border: solid $primary-color;
+            border-width: 0 1px 1px 0;
+            transform: rotate(45deg);
+        }
+        button {
+            margin-top: 30px;
+            width: 100%;
+            &:hover {
+                border: 1px solid $primary-color;
+            }
+        }
+    }
+}
+
+.footer-area {
+    padding: 30px 0;
+    background-color: $white-color;
+    .footer-icon {
+        @include tablet {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        @include all-phone {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        li {
+            display: inline;
+            margin-right: 20px;
+            a {
+                color: $primary-color;
+                font-size: 30px;
+            }
+        }
+    }
+
+    .footer-copyright {
+        text-align: right;
+        @include tablet {
+            text-align: center;
+        }
+        @include all-phone {
+            text-align: center;
+        }
+        p {
+            margin-bottom: 0;
+            font-size: 13px;
+            span {
+                font-weight: 600;
+                color: $primary-color;
+            }
+        }
+    }
+}

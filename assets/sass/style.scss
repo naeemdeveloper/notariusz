@@ -1,0 +1,27 @@
+/*-------------------------------------------------------------
+theme name: Notariusz
+theme uri: 
+author: gol_lukas
+author uri: 
+description: 
+tags: 
+version: 1.0.0
+text domain: 
+-------------------------------------------------------------*/
+
+// setting
+@import 'settings/variable';
+@import 'settings/mixin';
+
+// base
+@import 'base/base';
+
+// module
+@import 'module/accordion';
+@import 'module/button';
+@import 'module/back-to-top';
+@import 'module/preloader';
+
+// theme 
+@import 'theme/default';
+@import 'theme/theme';
